@@ -1,0 +1,5 @@
+hungarian notation: a számítógépes programozásban alkalmazott azonosító elnevezési konvenció, amelyben egy változó vagy függvény neve jelzi annak típusát vagy rendeltetését. A magyar jelölésnek két típusa van: Rendszeres hungarian notation és Apps hungarian notation.
+
+camelcase: Az elemek szóköz nélkül kerülnek egymás mellé úgy, hogy minden egyes elem kezdőbetűjét nagy betűvel írják. Az első elem kezdőbetűje lehet kis- vagy nagybetű is.
+
+snake case: olyan írásmód  melyben az elemek egy vagy több aláhúzásjel karakterrel (_) vannak szeparálva, üres karakterek nincsenek megengedve, minden elem kisbetűs.
