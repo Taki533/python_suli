@@ -1,0 +1,67 @@
+	1. generáció: gépikód
+processzorkódok binárisan
+
+	2. generáció assembly
+vannak utasítások és közvetlen memória címzéssel dolgozik
+utasítás példák: mv (move) cp (másolás)
+
+	3.generáció interpreter
+szöveges programot írunk nemközvetlenül a processzort bírjuk működésre hanem írunk egy programot amit egy másík fordító srgítségével futatthatóvá alakítunk
+
+megjelentek a vezérlő szerkezetek
+
+változó: névvel és típussal ellátott memória terület
+
+memória (ram) terület: mint egy óriási táblázat amiben egy celláknak címe sorszáma van a név betűkből számokból áll memória címhez van rendelve könnyen megjegyezhető
+
+	Változók típusai
+például szöveg/szám
+
+	Script nyelvek
+nem interpreteres nem keletkezik futtatható program a program futattásához egy külső futtató kell (python, php java script,stb)
+	4. objektum orientált programozási nyelvek (oop)
+
+algoritmus: egy folyamat vagy tevékenység végs számu lépésből álló le írása
+
+HF: 3 algoritmus leírása
+algoritmus le írása algoritmus leírókkal történik
+
+jack son ábra: tégla lapokból áll hieralhikus
+
+struktogram: egynagy tégla lap
+
+mondatszerűleírás: egszerű szókinccsel egyszerű nyelvtannal
+
+pszendokód
+pl: ut1
+    ut2
+   ha feltétel igaz AKKOR
+    ut3
+    ut4
+   HA VÉGE
+ciklus amíg feltétel igaz
+    ut5
+ciklus vége
+   csináld
+      ut6
+   amig feltétel....
+ciklus i:1-től 6-ig
+ciklus vége
+
+
+	A struktúrált programozás alap elemei
+1.szekvencia: az utasítások egymás után hajtódnak végre 
+2.szelekció: elágazás 
+	1. egyágu elágazás: végre hajtódik ha a feltétel igaz
+	2.kétágu elágazás: ha igaz ha igaz különben
+	3.többágu elágazás: ha igaz külöbne ha igaz különben...
+3.iteráció
+	előltesztelő típus: ez a fálj ciklus (ciklus amíg feltétel)
+	hátul tesztelő: egyszer mindenkép lefut ciklus
+						amíg feltétel
+	számlálós ciklus: annyiszor fut le ahány az i-ben szerepel
+
+
+HF:3 és 4 és 5
+
+	
