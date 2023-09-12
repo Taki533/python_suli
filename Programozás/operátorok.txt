@@ -1,0 +1,5 @@
+matematikai vagy aritmetikai operátorok
+Matematikai:+(ha szöveget használunk vele akkor összefűz),-,*,/,%(osztás maradékát adja csak meg),**(hatványozás),//(egész részes osztás (csak az egész számokat irja ki))
+érték adó módosító operátorok: =(egyetlen érték adó),+=,-=,*=,/=,%=,//=,**=
+összeghasonlító operátorok: (két eredményt hasonlít össze eredménye logikai) ==(egyenlő-e?),!=(nem egyenlő),>(nagyobb),<(kisseb)
+logikai operátorok: and,or,not(1operandusu művelet)
