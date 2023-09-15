@@ -1,0 +1,60 @@
+1 águ elágazás szerkezete: if-feltétel:
+
+2águ: if felt:
+	......igazág
+	else:
+	hamis ág
+pythonban nem lehet üresen hagyni ágat ha mégis AKKOR passt kell bele irni
+
+több águ szerkezete:
+		if felt:
+		  pass
+		el if feltétel:
+		  pass
+		el if feltétel:
+		
+iteráció: ismétlés/ciklus
+
+while: (előltesztelő ciklus) után feltétel és alatta behúzva a while magja
+
+ 	while feltétel:
+		print(i)
+		i += 1
+
+break: a break a ciklus futását meg akadályozza ott ahol bevan irva
+
+continue: kihadja az utána lévő utasítást és vissza megy az elejére
+
+else: cikluson belül használható akkor és akkor fut le ha ciklus végig le futott (akkor nem fut le ha volt break) 
+
+Hátul tesztelő ciklus a pythonban nincs!!!!!!
+
+for(bejárós) ciklus: egy lista elemeit végig tudjuk vele nézni
+
+lista típusok név szerint:
+	list
+	tuple
+	dictionary
+	set
+	string
+
+pl(for-ra):
+fruit = ["apple", "banana", "cherry"]
+for x in fruits
+  print (x)
+
+számlálós ciklus általános gondolata: kezdő értéktől megy valameddig valahányasával
+
+range(6) = [0,1,2,3,4,5]
+rangenek több alaklja van
+	ahol 1 számot adunk meg ott a szám amit meg adtunk a számok száma és annál a számnál 1el kevesbett ír ki (tehát az a szám nincs benne)
+
+	2 számnál az elsőtől kezdődik a másodiknál befejezi de az már nincs benne
+
+	3számmal az első szám a kezdő szám a második a vége de az már nincs benne a harmadik szám a "lépés köz" hogy hányasával megy a sor
+
+for ciklus: itt is van else ág ha nem break-el lépünk ki belőle
+
+beágyazott ciklusok: cikluson belüle lehetnek másik ciklusok
+
+enumerate: be sorszámoz egy lista szerűséget

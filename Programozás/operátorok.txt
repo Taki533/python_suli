@@ -6,17 +6,3 @@ Matematikai:+(ha szöveget használunk vele akkor összefűz),-,*,/,%(osztás ma
 logikai operátorok: and,or,not(1 operandusu művelet),is("ez ugyan az mint az"),not is(nem ugyanaz)
 int (csoportban lévőség vizsgálata),not int(nincs a csoportban)
 
-1 águ elágazás szerkezete: if-feltétel:
-
-2águ: if felt:
-	......igazág
-	else:
-	hamis ág
-pythonban nem lehet üresen hagyni ágat ha mégis AKKOR passt kell bele irni
-
-több águ szerkezete:
-		if felt:
-		  pass
-		el if feltétel:
-		  pass
-		el if feltétel:
