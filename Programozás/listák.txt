@@ -1,0 +1,18 @@
+A lista: több érték tárolására szolgáló változó típus
+jele: []
+list eleméhez lista nevével és elem sorszámával (indexével) férünk hozza (az index 0tól kezdődik) 
+pl: lista = ["1"]
+    lista = ["1" , "2" , "3" , "4"]
+a lista rendezett(ordered)+
+
+a llista változtatható
+tudunk elvenni hozádani elemeket (1 listában lehetnek azonos elemek)
+1 listában lehetnek különböző elemek pl. lista = [1, "alma"]
+lenel le lehet kérdezni a lista méretét elem számát
+( len(lista neve) )
+neagtív indexelés háturól való hozzá férés
+pl: -1 az utolsó elem
+
+intervallum megadás
+megadhatunk kezdő és vég értékeket
+pl: print(list[2:5]) a harmadik eléemtől a hatodik elemig de a hatodik nincs benne
