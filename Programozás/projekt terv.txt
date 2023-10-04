@@ -1,0 +1,38 @@
+1.lépés BE: mérték egység fajta
+	-lista MENU
+	-1: hossz
+	-2: terület
+	-3: térfogat
+	-4: tömeg
+	-5: űrmérték
+	-6: űr-térfogat
+	-0: kilép
+ 2. lépés
+-lsita Menu
+-Mértékegység
+	1 egység 1
+	2 egység 2
+	3 egység 3
+	0 vissza
+azokat adja ki amit ki választottunk
+
+3.lépés
+MIbe váltsuk
+	Menu, olyan mint a második
+4.lépés 
+Mennyiség be kérés
+5.lépés
+Számolás
+6.lépés
+eredmény ki iratása
+7.lépés
+: újra
+
+
+
+hossz mérték egységei
+-mm
+-cm
+-dm
+-m
+-m2
