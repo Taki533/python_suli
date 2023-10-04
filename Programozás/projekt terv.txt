@@ -28,11 +28,3 @@ eredmény ki iratása
 7.lépés
 : újra
 
-
-
-hossz mérték egységei
--mm
--cm
--dm
--m
--m2
