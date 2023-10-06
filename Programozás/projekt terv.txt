@@ -21,10 +21,13 @@ MIbe váltsuk
 	Menu, olyan mint a második
 4.lépés 
 Mennyiség be kérés
+
 5.lépés
 Számolás
+
 6.lépés
 eredmény ki iratása
+
 7.lépés
 : újra
 
