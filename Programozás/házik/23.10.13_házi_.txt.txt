@@ -1,0 +1,3 @@
+ranges forral páros számok ki irtaássa 
+
+a nulla ne legyen a listában több féle képpen megoldani
