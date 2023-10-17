@@ -17,6 +17,7 @@ intervallum megadás
 megadhatunk kezdő és vég értékeket
 pl: print(list[2:5]) a harmadik eléemtől a hatodik elemig de a hatodik nincs benne
 
+<<<<<<< HEAD
 lista név és indexek pl thislist[1:3]= ["blacktorrent","watermelon"]
 
 Hozzáadás a listához:
@@ -55,3 +56,13 @@ megszámolja a megadott elemeket
 
 index
 a megadott elem indexét adja vissza
+=======
+-4:-1 hátulről a negyediktől a utolsó ig utsó nincs benne
+-1:-2 nemn jó mert a -1 nagyobb mint a -2
+
+1:10:2 1től 10ig ketesével
+
+::2 minden másokdikat néz meg és ugy  halad az egész listán
+::-1 megfordítja a listát
+
+>>>>>>> 22537204cd6c9be7f7896b6d8dc5bba3bc7282b8
