@@ -1,0 +1,3 @@
+bekérni szöveges elemeket egy listába üres sor végjelig
+a list aabdrendezett utolsó 3 elemét irassuk ki
+a lista eredeti sorrendjének utolsó 3 elemét abc rendben irassuk ki

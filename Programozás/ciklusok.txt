@@ -4,7 +4,7 @@
 	......igazág
 	else:
 	hamis ág
-pythonban nem lehet üresen hagyni ágat ha mégis AKKOR passt kell bele irni
+pythonban nem lehet üresen hagyni ágat ha mégis AKKOR pass-t kell bele irni
 
 több águ szerkezete:
 		if felt:

@@ -16,3 +16,42 @@ pl: -1 az utolsó elem
 intervallum megadás
 megadhatunk kezdő és vég értékeket
 pl: print(list[2:5]) a harmadik eléemtől a hatodik elemig de a hatodik nincs benne
+
+lista név és indexek pl thislist[1:3]= ["blacktorrent","watermelon"]
+
+Hozzáadás a listához:
+
+thislist.instert(2, watermelon)
+
+rhislist.append("orange") a lista végére szúrbe
+
+listaához listát ad
+
+thislist.extend(tropical)
+
+kivonás a listából
+
+thislist.remove("valami") a megadott elemet veszi ki
+
+pop command
+thislist.pop(2) megadott indexű elemet vesz ki
+
+thislist.clear() megmarad a váltzó csak a tartalmát törli
+
+lista rendezés
+thislist.sort() ha szöveg abc szerint ha szám szám szerint
+
+ha sortnak megadjuk hogy thislist.sort(reverse=true) akkor csökennő sorrend/ vissza fele
+
+
+reverse order
+
+thislist.reverse()
+
+
+count
+megszámolja a megadott elemeket
+
+
+index
+a megadott elem indexét adja vissza
