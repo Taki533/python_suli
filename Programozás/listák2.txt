@@ -64,5 +64,3 @@ a megadott elem indexét adja vissza
 
 ::2 minden másokdikat néz meg és ugy  halad az egész listán
 ::-1 megfordítja a listát
-
->>>>>>> 22537204cd6c9be7f7896b6d8dc5bba3bc7282b8

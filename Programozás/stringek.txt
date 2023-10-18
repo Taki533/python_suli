@@ -1,0 +1,23 @@
+"Hello"=ez ebben a formában egy string literál ki iratása a print fügvénnyel
+több soros string a: """ """-vel
+
+A sringek tömbök
+ezért lehet így darabolni pl: print(a[1])
+
+string végignézése pl:
+for x in "banana"
+	print(x)
+
+in operátor is működik
+
+szövegek szeletelése
+b="hello world"
+print(b[1:5)
+
+print(a.upper)=nagybetűsítés eredetit nem változtatja meg
+
+print(a.lower)=kisbetűsítés eredetit nem váloztatja
+
+print(a.strip)= a whitespacek (whitespace=sapce,tab,stb nem látható karakter ) törlése az elejéről és végéről
+print(a.replace ("H", "J")) Trükk betű karakterek cseréje (szöveg részek törlése szöveg csere üresre)
+print(a.split(","))= elvágja ott ami megvan adva benne,itt a példában az eredménye az higy a "," elvan vágva,listában a vágó szöveg nincs benne

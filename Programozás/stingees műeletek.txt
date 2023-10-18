@@ -1,0 +1,14 @@
+string konkatenáció(összefűzés)
+	+operátorral
+
+string formázás (szövegformázás)
+db=5
+s="alma"+str(db)+"db fa van"
+
+format:
+age=36
+txt = "my name is John and i am {}"
+print(txt.format(age)) az age a kapcsos zárójel helyére megy ha több kapcsos zárójel van akkor sorrendben  helyettesít
+
+
+

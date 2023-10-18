@@ -1,0 +1,1 @@
+operátor, váltnév, típus konverzió,lista, számolások, bekérés,. string összefűzés
