@@ -1,0 +1,13 @@
+a fügvény: függ valamitőkl és annak a függésnek megfeleőeen más mást csinál
+
+a fügvénynek van neve és paraméter listája ()-között
+
+a fügvény adhatvissza értéket
+
+a vissza adás a return értékkel történik
+
+a fügvémy elindítzásához hívni kell a fügvényt a nevével és paraméter listájával történik
+
+ha vissza ad értéket akkor célszerű vissza is venni
+
+a def szóval kell csinálni
