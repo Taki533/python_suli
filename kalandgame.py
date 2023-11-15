@@ -16,38 +16,60 @@ lista=["előre", "hátra", "jobbra", "balra"]
 #valasz=menu(lista)
 #print(valasz,lista[valasz])
 
+
+#nyelvválasztás
+nyelvLista=["Magyar", "English", "Deutsch", "Russky"]
+nyelvId={"Magyar":"szöveghHUN", "English":"szövegENG"}
+print("Válassz nyelvet")
+while True:
+    nyelvValasztas=menu (nyelvLista)
+    #print(nyelvLista[nyelvValasztas])
+    if nyelvLista[nyelvValasztas] in nyelvId:
+        break
+    else:
+        print("Sajnos ez a forditás még nem készült el!")
+
+if nyelvId[nyelvLista[nyelvValasztas]] =="szöveghHUN":
+    import szöveghHUN as t
+
+if nyelvId[nyelvLista[nyelvValasztas]] =="szövegENG":
+    import szövegENG as t 
+
+
 tortenet=[
         [
             1,#szálId
-            "Reggel felébredtem. Mit tegyek?",#szöveg
-            ["fogmosás","Reggeli","Öltözés"],#választások
+            t.text[""],#szöveg
+            [t.text["fogmosás"],t.text["Reggeli"],t.text["Öltözés"]],#választások
             [2,3,4] #hova ugorjon
         ],
         [
             2,#szálId
-            "Elmegyek fogat mosni. Sikálom rendesen ahogy kell!",#szöveg
-            ["fogmosás","Reggeli","Öltözés"],#választások
+            t.text["Elmegyek fogat mosni. Sikálom rendesen ahogy kell!"],#szöveg
+            [t.text["fogmosás"],t.text["Reggeli"],t.text["Öltözés"]],#választások
             [2,3,4] #hova ugorjon
         ],
         [
             3,#szálId
-            "Kellene valamit enni! Anya csinált valamit? Nézzük meg!",#szöveg
-            ["fogmosás","Reggeli","Öltözés"],#választások
-            [2,3,4] #hova ugorjon
+            t.text["Kellene valamit enni! Anya csinált valamit? Nézzük meg!"],#szöveg
+            [t.text["fogmosás"],t.text["Reggeli"],t.text["Öltözés"]],#választások
+            [2,3,4] #hova ugorjon 
         ],
         [
             4,#szálId
-            "Kisséhűvösvan, Kellene valami ruha! \nFelveszek egy nadrágot, meg egy pólót",#szöveg
-            ["fogmosás","Reggeli","Öltözés", "66-os parancs"],#választások
+            t.text["Kisséhűvösvan, Kellene valami ruha! \nFelveszek egy nadrágot, meg egy pólót"],#szöveg
+            [t.text["fogmosás"],t.text["Reggeli"],t.text["Öltözés"],t.text ["66-os parancs"]],#választások
             [2,3,4,66] #hova ugorjon
         ],
         [
             66,#szálId
-            "végemindennek",
+            t.text["végemindennek"],
             [], #választások
             [] #hova ugorjon
         ]
     ]
+
+
 SzalId=1
 while True:
     temp=[]
