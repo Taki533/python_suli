@@ -1,3 +1,10 @@
+import random
+def roll(minimum):
+    return minimum<=random.randint(1,20)
+
+
+
+
 def menu(lista):
     for i,elem in enumerate(lista):
         print("{}: {}".format(i+1,elem))
@@ -59,7 +66,7 @@ tortenet=[
             4,#szálId
             t.text["Kisséhűvösvan, Kellene valami ruha! \nFelveszek egy nadrágot, meg egy pólót"],#szöveg
             [t.text["fogmosás"],t.text["Reggeli"],t.text["Öltözés"],t.text ["66-os parancs"]],#választások
-            [2,3,4,66] #hova ugorjon
+            [2,3,4,66 if roll(21) else 1] #hova ugorjon
         ],
         [
             66,#szálId
