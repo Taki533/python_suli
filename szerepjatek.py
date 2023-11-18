@@ -85,58 +85,58 @@ tortenet=[
             t.text["kifosztod"], t.text["átvizsgálod a szobát"]], #választái lehetőségek
             [9,11] #hova ugorjon
         ],
-        [
+[
             8,#szál ID
             t.text["Kevesebbet dobtál mint az ellenfél, ezért csúnyán megvert! Meghaltál!"], #szöveg
             [t.text["újrakezdés"], t.text["kilépés"]], #választái lehetőségek
             [1,66] #hova ugorjon
         ],
-        [
+[
             9,#szál ID
-            bonusz==2 t.text["Átkutatod a koboldot. Találsz nála egy rozsdás kenőkést, és egy félig megevett zsíroskerenyeret. A rozsdás kenőkés szerencsét hoz!"], #szöveg
+            bonusz==2, t.text["Átkutatod a koboldot. Találsz nála egy rozsdás kenőkést, és egy félig megevett zsíroskerenyeret. A rozsdás kenőkés szerencsét hoz!"], #szöveg
             [t.text["átvizsgálod a szobát"], t.text["visszamész a folysóra"]], #választái lehetőségek
             [11,10] #hova ugorjon
         ],
-        [
+[
             10,#szál ID
             t.text["A folysó továbbra is üres. Most megfigyeled a végét, és látod hogy nincs folytatása."], #szöveg
             [t.text["vissza a szobába"]], #választái lehetőségek
             [11] #hova ugorjon
         ],
-        [
+[
             11,#szál ID
             t.text["A szobát bevilágítja a fáklyád. Van bent egy asztal, és pár szék. Előtted és jobbról is egy ajtó van."], #szöveg
             [t.text["Előttem lévő ajtó kinyitása"], t.text["jobb oldali ajtó kinyitása"]], #választái lehetőségek
             [12,12] #hova ugorjon
         ],
-        [
+[
             12,#szál ID
             t.text["Odasétálsz az ajtóhoz, és szerencsédre nyitva van"], #szöveg
             [t.text["bemész"], t.text["másik ajtó megnézése"]], #választái lehetőségek
             [14,13] #hova ugorjon
         ],
-        [
+[
             13,#szál ID
             t.text["A jobb oldali ajtó zárva van. Lehetetlen kinyitni."], #szöveg
             [t.text["vissza a másikhoz"]], #választái lehetőségek
             [14] #hova ugorjon
         ],
-        [
+[
             14,#szál ID
             t.text["Besétálsz az ajtón, és látsz egy kijáratot, fény szűrődik onnan. De egy hatalmas ork állja az utad."], #szöveg
-            [t.text["Harcolsz vele(nehéz)"t.text["megpróbálod megkerülni"]], #választái lehetőségek
+            [t.text["Harcolsz vele(nehéz)"]t.text["megpróbálod megkerülni"]], #választái lehetőségek
             [16 if roll(16-bonusz) else 16 if roll(16-bonusz) else 17,15] #hova ugorjon
         ],
-        [
+[
             15,#szál ID
             t.text["megpróltál elfutni az ork mellett, és nagy szerencsédre sikkerel jártál és kijutottál a kazamatából"], #szöveg
-            [t.text["újrakezdés"]t.text["kilépés"]], #választái lehetőségek
+            [t.text["játék újrakezdése"]t.text["kilépés"]], #választái lehetőségek
             [1,66] #hova ugorjon
         ],
-             [
+[
             16,#szál ID
             t.text["Nagyobbat dobtál mint az ellenfél, ezért legyőzted és végre kijutottál a kazamatából"], #szöveg
-            t.text["újrakezdés"], t.text["kilépés"]], #választái lehetőségek
+            t.text["játék újrakezdése"], t.text["kilépés"]], #választái lehetőségek
             [1,66] #hova ugorjon
         ],
         [
