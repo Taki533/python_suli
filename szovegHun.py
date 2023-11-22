@@ -1,4 +1,5 @@
-text = {"Megérkezel a kazamata bejáratához. Csikorogva kinyílik az ajtó és egy sötét, dohos folyosó fogad.":"Megérkezel a kazamata bejáratához. Csikorogva kinyílik az ajtó és egy sötét, dohos folyosó fogad.",
+text = {"válassz egy számot a listából!":"válassz egy számot a listából!",
+        "Megérkezel a kazamata bejáratához. Csikorogva kinyílik az ajtó és egy sötét, dohos folyosó fogad.":"Megérkezel a kazamata bejáratához. Csikorogva kinyílik az ajtó és egy sötét, dohos folyosó fogad.",
         "belépsz és gyyújtasz egy fáklyát":"belépsz és gyyújtasz egy fáklyát",
         "besétálsz a sötétbe":"besétálsz a sötétbe",
         "Túl hideg van, halálra fagytál!":"Túl hideg van, halálra fagytál!",

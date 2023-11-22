@@ -1,4 +1,5 @@
-text = {"Megérkezel a kazamata bejáratához. Csikorogva kinyílik az ajtó és egy sötét, dohos folyosó fogad.": "You arrive at the entrance to the kazamata. The door creaks open and you are greeted by a dark, musty corridor.",
+text = {"válassz egy számot a listából!":"Choose a number from the list!",
+        "Megérkezel a kazamata bejáratához. Csikorogva kinyílik az ajtó és egy sötét, dohos folyosó fogad.": "You arrive at the entrance to the kazamata. The door creaks open and you are greeted by a dark, musty corridor.",
         "belépsz és gyyújtasz egy fáklyát": "you enter and light a torch",
         "besétálsz a sötétbe": "you walk into the dark",
         "Túl hideg van, halálra fagytál!": "It's too cold, you're freezing to death",

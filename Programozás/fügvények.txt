@@ -1,13 +1,33 @@
-a fügvény: függ valamitőkl és annak a függésnek megfeleőeen más mást csinál
+függvény(function): program blokk egy elkülönítettrészen
 
-a fügvénynek van neve és paraméter listája ()-között
+van neve típusa
 
-a fügvény adhatvissza értéket
+megkellhívni a nevével és paraméterlistával
 
-a vissza adás a return értékkel történik
+akkor fügvény ha ad vissza értéket
 
-a fügvémy elindítzásához hívni kell a fügvényt a nevével és paraméter listájával történik
+az a függvény ami nem ad vissza értéket akkor metódus/eljárás
 
-ha vissza ad értéket akkor célszerű vissza is venni
+def kulcsszóval lehet létrehozni
 
-a def szóval kell csinálni
+ha kell értéket vissza adni akkor  "return"al lehet megtenni 
+a "return" csak 1 értéket tud vissza adni
+
+az argument az érték amit át adunk a fügvény belsejében már paraméter(parameter) lesz
+
+*változónév: tuplethoz létre
+
+kulcsszó argumentumok
+	
+	kulcsszavak használata a függvénynél
+	a function definiálásban a 321 sorrendben kapják a változók a sorrendet
+	ha kulcsszavakat használunk a kkor bármien sorrendet használhatunk 
+	pl: print
+		kulcsszavai: sep(speartor) end printnek a sor vége az lesz
+		kulcsszó argumentumok:**kwargs
+
+pass: nem csinál semmit leállítja azt a programot
+
+Rekurzió
+	Rekurzió: ugyan annaka fügvénynek a használata a fügvényenbelül
+	
