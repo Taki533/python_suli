@@ -1,0 +1,11 @@
+a használatához kell "import random" a kód elején
+
+random.seed(): a seed megadásával kezdő értéket adunk a véletlen szám generátornak
+
+random.randrange(): tartományt adunk meg neki amiből generál az első szám benne van a másokdik nincspl: (10,25)10-24ig generál random számot a harmadik paraméter a lépés
+
+random.randint(): ebben nincs lépés és mind 2 szám benne van
+
+random.choice(): kiválaszt egyet a megadott listából
+
+random.uniform(): 0 és 1 közötti értéket ad vissza és az 1 nincs benne már floatos értékeket ad meg(lehet neki megadni másik számokat)

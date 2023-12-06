@@ -1,0 +1,22 @@
+szöveges fájlok kiterjesztése: .txt, .csv, .dat, .nfo, .out
+
+meg lehet nyitni olvasásra (ha a fájl nemlétezik akkor hibaüzenetet kapunk)
+	olvasásnál:. lehet egy karaktert beolvasni, több karaktert beolvasni, egy sort beolvasni, több sort beolvasni, a végig be olvasni
+
+write módon megnyitás: ha nem létezik fájl akkor létrhoz ha létezik felülírja kérdezésnélkül
+	írni bele lehet: lehet egy karaktert, több karaktert, egy sort , több sort 
+
+megnyitás jozzá fűzéssel(append): ha létezik megnyitja írásra és a mutatót a végére rakja és a fájl végén fogja folytatni ha nem létezik létrehoz
+
+phyton
+megnyitás: open()
+	open módok: "r"=read
+		    "w"=write
+		    "a"=append
+		    "x"=create
+	Meglehet adni milyet akarunk 
+				t=text
+				b=binary
+egy sor be olvasása: readline()
+
+print (f.read(5)): hány karkatert olvasunk
