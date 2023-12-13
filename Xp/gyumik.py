@@ -1,0 +1,1 @@
+print("1\talma\t500\n2\tszilva\t700\n3\tbarack\t850\n4\tkörte\t370")
