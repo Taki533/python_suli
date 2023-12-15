@@ -1,0 +1,34 @@
+2 dolog közti váltakozás
+2águ elágazás
+	-int használat
+	 p=0
+	 p=1-1p  <- ismétlés
+logikai
+	P=True
+	P=not P <- ismétlés
+előjelel
+	p=1
+	p*=(-1) <- ismétlés
+cilus változó vizsgálat
+párosság vizsgálata
+	if i%2==0:
+	   paros
+	else
+	   páratlan
+
+2 vagy több elemre való váltakozás
+
+p=0
+elágazás 0,1,2,3...-e az elem
+elágazások vége
+p+=1
+if p>5(a szám a max elemek száma)
+	p=0
+
+lista és index használattal
+
+	p=0
+	l[p]=valami()
+	p+1
+	if p>=len(l)
+	   p=0
