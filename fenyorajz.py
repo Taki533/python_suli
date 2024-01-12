@@ -18,7 +18,22 @@ def nagyit(pontok,x,y=-1):
                 pontok[i]*=x
             else:
                 pontok[i]*=y
-    return pontok            
+    return pontok 
+def ForgatPont(x,y,szog):
+    x2=math.cos(math.radians(szog))*x - math.sin(math.radians(szog))*y
+    y2=math.sin(math.radians(szog))*x + math.cos(math.radians(szog))*y
+    return x2,y2
+
+def forgat(lista,szog,oX=0,oY=0):
+
+    lista=eltol(lista,-oX,-oY)
+
+    for i in range(len(lista),2):
+        lista[i],lista[i+1]=ForgatPont(lista[i],lista[i+1],szog)
+    lista=eltol(lista,oX,oY)
+
+    return lista
+
 def fasorsol(darab):
     lista=[]
     
@@ -50,10 +65,12 @@ fenyo=[200,0,0,400,190,400,190,500,210,500,210,400,400,400,200,0]
 canvas.create_line(fenyo,width=5,fill="green")
 
 fenyo2=[200,0,0,100,150,100,0,200,150,200,0,300,150,300,150,400,250,400,250,300,400,300,250,200,400,200,250,100,400,100,200,0]
-canvas.create_line(fenyo2,width=1.5,fill="green")
+
 fenyo2=eltol(fenyo2,200,200)
-canvas.create_line(fenyo2,width=1.5,fill="green")
-fenyo2=nagyit(fenyo2,0.5,1)
+fenyo2=nagyit(fenyo2,0.1,0.2)
+fenyo2=forgat(fenyo2,90)
 canvas.create_line(fenyo2,width=1.5,fill="green")
 
 win.mainloop()
+
+#hf a virágokből elhelyezni
