@@ -33,6 +33,16 @@ B=[[0,0,110,0,110,50,160,50,160,120,0,120,0,0],#fenti lyuk
 canvas.create_line(B[0],width=5,fill="blue")
 canvas.create_line(B[1],width=5,fill="blue")
 canvas.create_line(B[2],width=5,fill="blue")
+B2=[]
+for e in B:
+    e=transzformaciok.eltol(e,100,100)
+    e=transzformaciok.nagyit(e,1.5)
+    e=transzformaciok.forgat(e,45)
+    B2.append(e)
 
+B2=transzformaciok.forgat(B2,-45)
+B2=transzformaciok.forgat(B2,-45)
 
+for e in B2:
+    canvas.create_line(e,width=5,fill="blue")
 win.mainloop()
