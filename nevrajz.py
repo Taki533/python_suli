@@ -1,4 +1,3 @@
-from errno import E2BIG
 import transzformaciok
 from tkinter import *
 win=Tk()
@@ -36,7 +35,7 @@ N = [850,100,850,300,880,300,880,190,920,300,950,300,950,100,920,100,920,190,880
 C=[0,0,110,0,110,30,25,30,25,90,110,90,110,120,0,120,0,0]
 
 hatter="#ffffff"
-BetuSzinek=["Blue",hatter,hatter]
+BetuSzinek=["Blue",hatter,hatter,"Blue","Blue","Blue","Blue"]
 canvas.create_line(B[0],width=5,fill="blue")
 canvas.create_line(B[1],width=5,fill="blue")
 canvas.create_line(B[2],width=5,fill="blue")
@@ -64,23 +63,53 @@ C2=transzformaciok.eltol(C2,440,110)
 E3=transzformaciok.masol(E)
 E3=transzformaciok.nagyit(E3,0.9)
 E3=transzformaciok.eltol(E3,580,100)
+#print(B2,E2,C2,N2,E3)
 
-
-
+Bence=[[20, 100, 130, 100, 130, 150, 180, 150, 180, 220, 20, 220, 20, 100],
+[47.5, 115, 102.5, 115, 102.5, 130, 47.5, 130, 47.5, 115], 
+[47.5, 185, 140, 185, 140, 200, 47.5, 200, 47.5, 185],
+[190.0, 100.0, 289.0, 100.0, 289.0, 127.0, 221.5, 127.0, 221.5, 154.0, 289.0, 154.0, 289.0, 181.0, 221.5, 181.0, 221.5, 208.0, 289.0, 208.0, 289.0, 235.0, 221.5, 235.0, 190.0, 235.0, 190.0, 100.0],
+[440, 110, 550, 110, 550, 140, 465, 140, 465, 200, 550, 200, 550, 230, 440, 230, 440, 110],
+[331.5, 99.0, 331.5, 236.99999999999997, 352.19999999999993, 236.99999999999997, 352.19999999999993, 161.1, 379.79999999999995, 236.99999999999997, 400.5, 236.99999999999997, 400.5, 99.0, 379.79999999999995, 99.0, 379.79999999999995, 161.1, 352.19999999999993, 99.0, 331.5, 99.0],
+[580.0, 100.0, 679.0, 100.0, 679.0, 127.0, 611.5, 127.0, 611.5, 154.0, 679.0, 154.0, 679.0, 181.0, 611.5, 181.0, 611.5, 208.0, 679.0, 208.0, 679.0, 235.0, 611.5, 235.0, 580.0, 235.0, 580.0, 100.0]]
 '''for e in B2:
     canvas.create_line(e,width=5,fill="blue")
 for e in B:
     canvas.create_line(e,width=5,fill="red")'''
-canvas.create_line(E,width=5,fill="red")
+xTengely=0.5
+yTengely=0.5
+
 while True:
     canvas.delete("all")
-    canvas.create_line(E2,width=5,fill="red")
-    canvas.create_line(N2,width=5,fill="red")
-    canvas.create_line(C2,width=5,fill="red")
-    canvas.create_line(E3,width=5,fill="red")
-    #B2=transzformaciok.forgat(B2,0.01)
-    for i,e in enumerate(B2):
+    #Bence=transzformaciok.forgat(Bence,0.01)
+    magassag=win.winfo_height()
+    hossz=win.winfo_width()
+    xek=[]
+    yok=[]
+    for elem in Bence:
+        for i in range(len(elem)):
+            if i%2==0:
+                xek.append(elem[i])
+            else:
+                yok.append(elem[i])
+    #legnagyobb kordináták
+    xMaximum=max(xek)
+    yMaximum=max(yok)
+    #legkisseb kordináták
+    xMinimum=min(xek)
+    yMinimum=min(yok)
+
+    if yMaximum>magassag or yMaximum<0:
+        yTengely*=-1
+    if xMaximum>hossz or xMinimum<0:
+        xTengely*=-1
+    sBence=transzformaciok.eltol(Bence,xTengely,yTengely)
+    for i,e in enumerate(Bence):
         d=canvas.create_polygon(e,width=2,fill=BetuSzinek[i], outline="red")
-    
+
+    win.winfo_height()
+    win.winfo_width()
+
     win.update_idletasks()
     win.update()
+
