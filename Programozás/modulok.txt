@@ -1,0 +1,15 @@
+modul: külön fájlban található program gyűjtemény részei lehetnek változók és függvények és hasonlók
+
+fájl neve "modulnév".py
+
+betöltés: import "modulneve"
+
+meghívás "modulneve". a változó/függvény név
+
+nehasználjunk már ismert(híres) modulneveket
+
+import "modulneve" as "modul ujneve"(állnév/allias) ez után lehet igy használni "modul ujneve". változó/fügvény
+
+dir():ki listűzza a modul össze függvény/változó nevét
+
+from "modulnév"  import "változó/amit akarunk a modulból" (speciális karakter csillag(*) mindnet betölt) ilyenkor csak simán "változó/függvény" nem kell a "modulnév".
