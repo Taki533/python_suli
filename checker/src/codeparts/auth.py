@@ -5,7 +5,7 @@ from re import compile
 import ssl
 from typing import Any
 from tkinter import *
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import requests
 from requests.adapters import HTTPAdapter
@@ -25,7 +25,7 @@ class SSLAdapter(HTTPAdapter):
         return super(SSLAdapter, self).init_poolmanager(*a, **k)
 
 
-class auth():
+class Auth():
     def __init__(self) -> None:
         path = os.getcwd()
         self.useragent = Constants.RIOTCLIENT
@@ -141,7 +141,6 @@ class auth():
                 # input(typebanned)
                 # input(typebanned)
                 if typebanned == "PERMANENT_BAN" or typebanned == 'PERMA_BAN':
-                    # input(True)
                     account.code = 4
                     return account
                 elif 'PERMANENT_BAN' in str(data3) or 'PERMA_BAN' in str(data3):
@@ -152,7 +151,9 @@ class auth():
                     expire = data3[0]['dat']['expirationMillis']
                     expirepatched = datetime.utcfromtimestamp(
                         int(expire) / 1000.0)
-                    # input(expire)
+                    if expirepatched > datetime.now() + timedelta(days=365 * 20):
+                        account.code = 4
+                        return account
                     banuntil = expirepatched
                 else:
                     banuntil = None
@@ -178,7 +179,8 @@ class auth():
             except Exception as e:
                 # input(e)
                 mailverif = True
-            mailverif = not mailverif  # true to false || false to true
+            mailverif = not mailverif
+            account.tokenid = token_id
             account.token = token
             account.entt = entitlement
             account.puuid = puuid

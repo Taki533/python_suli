@@ -1,0 +1,40 @@
+okbjektum: való világból vett kép lehet tuladonsága mérete
+
+osztály: class kulcsszóvalhozzuk létre a class az objektum tervrajza
+
+példányosításal objektumot csinélunk belőle
+
+class "classnév":
+	x=5 "ez egy tulajdonság"
+
+p1= MyClass()
+
+print(p1.x) (az x tulajdonságot printeli)
+
+class self:
+ input valami
+
+def my function(self)
+
+print("hello name is",+ self.name)
+konstuktor csinál objektumot és egyből lefut
+__str__()
+
+ha default str akkor <__main__.Person object at 0xhexadecimális szám amit vissza ad
+
+def __str__(self):
+	returnf"{self.name}({self.age})" azt adja vissz ha string amit a {}ben van
+
+Inheritance: (öröklődés) ennek a segítségével egy régi osztály részeit egy uj osztályban lehet használni
+akkor használjuk ha változtatni/bővíteni akarunk
+szülő/ős osztály(parent/base)
+gyerek/leszármazott(child/derived)
+
+
+class student(Person): (a Person egy másik class igy működik az öröklődés)
+
+
+konstruktor: ha nincs megadva akkor ugyan az lesz mint a szülőé vag yadhatunk uj konstruktort is
+
+stülő kostruktorának lefutattása: osztálynév.__init__(self,(és a paraméterei))
+super.__init__(csak a paraméterek a self nem kell)

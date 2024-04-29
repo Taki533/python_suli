@@ -26,7 +26,7 @@ class program():
     def __init__(self) -> None:
         self.count = 0
         self.checked = 0
-        self.version = '3.15.3.1'
+        self.version = '3.16.1'
         self.riotlimitinarow = 0
         path = os.getcwd()
         self.parentpath = os.path.abspath(os.path.join(path, os.pardir))
@@ -44,6 +44,8 @@ class program():
             print('no internet connection')
             os._exit(0)
         os.system('cls')
+        #kernel32 = ctypes.windll.kernel32
+        #kernel32.SetConsoleMode(kernel32.GetStdHandle(-10), 128)
         codes = vars(colorama.Fore)
         colors = [codes[color] for color in codes if color not in ['BLACK']]
         colored_name = [random.choice(
@@ -54,13 +56,11 @@ class program():
 
         self.CheckIfFirstStart()
 
-        if 'devtest' in self.version:
-            print(sys.center(f'{Fore.YELLOW}Hi from liljaba'))
-        elif 'beta' in self.version:
+        if 'beta' in self.version:
             print(sys.center(
                 f'{Fore.YELLOW}You have downloaded the BETA version. It can work unstable and contain some bugs.'))
             print(sys.center(
-                f'Follow https://github.com/LIL-JABA/valchecker/releases/latest to download the latest stable release{Fore.RESET}'))
+                f'Visit https://github.com/LIL-JABA/valchecker/releases/latest to download the latest stable release{Fore.RESET}'))
         elif self.lastver != self.version:
             print(sys.center(
                 f'\nnext version {self.lastver} is available!'))
@@ -136,7 +136,7 @@ class program():
         filename = str(file).split("name='")[1].split("'>")[0]
         if (".vlchkr" in filename):
             valkekersource = systems.vlchkrsource(filename)
-            return valkekersource
+            return valkekersource, filename.split('/')[-1]
         with open(str(filename), 'r', encoding='UTF-8', errors='replace') as file:
             lines = file.readlines()
             ret = []
@@ -148,7 +148,7 @@ class program():
                     amark='!'
                 ).execute():
                     self.count = len(lines)
-                    return lines
+                    return lines, filename.split('/')[-1]
             for logpass in lines:
                 logpass = logpass.strip()
                 # remove doubles
@@ -157,13 +157,13 @@ class program():
                     ctypes.windll.kernel32.SetConsoleTitleW(
                         f'ValChecker {self.version} by liljaba1337 | Loading Accounts ({self.count})')
                     ret.append(logpass)
-            return ret
+            return ret, filename.split('/')[-1]
 
     def main(self):
         ctypes.windll.kernel32.SetConsoleTitleW(
             f'ValChecker {self.version} by liljaba1337 | Loading Settings')
         print('loading settings')
-        settings = sys.load_settings()
+        settings = sys.load_settings()        
 
         ctypes.windll.kernel32.SetConsoleTitleW(
             f'ValChecker {self.version} by liljaba1337 | Loading Proxies')
@@ -174,37 +174,10 @@ class program():
             path = os.getcwd()
             file_path = f"{os.path.abspath(os.path.join(path, os.pardir))}\\proxy.txt"
 
-            print(Fore.YELLOW, end='')
-            response = input(
-                'No Proxies Found, Do you want to scrape proxies? (y/n): ')
-            print(Style.RESET_ALL, end='')
-
-            if response.lower() == 'y':
-                f = open('system\\settings.json', 'r+')
-                data = json.load(f)
-                proxyscraper = data['proxyscraper']
-                f.close()
-
-                # Scrape proxies
-                url = proxyscraper
-                proxies = requests.get(url).text.split('\r\n')
-
-                # Save proxies to file
-                with open(file_path, 'w') as f:
-                    f.write("\n".join(proxies))
-
-                # Print number of proxies saved
-                num_proxies = len(proxies)
-                print(f'{num_proxies} Proxies saved to "proxy.txt" file.')
-                proxylist = sys.load_proxy()
-            else:
-                print('Running Proxy Less...')
-
         ctypes.windll.kernel32.SetConsoleTitleW(
             f'ValChecker {self.version} by liljaba1337 | Loading Accounts')
         print('loading accounts')
-
-        accounts = self.get_accounts()
+        accounts, comboname = self.get_accounts()
 
         print('loading assets')
         ctypes.windll.kernel32.SetConsoleTitleW(
@@ -214,7 +187,7 @@ class program():
         print('loading checker')
         ctypes.windll.kernel32.SetConsoleTitleW(
             f'ValChecker {self.version} by liljaba1337 | Loading Checker')
-        scheck = checker.simplechecker(settings, proxylist, self.version)
+        scheck = checker.simplechecker(settings, proxylist, self.version, comboname)
 
         isvalkekersource = False
         if type(accounts) == systems.vlchkrsource:
@@ -225,15 +198,15 @@ class program():
     def CheckIfFirstStart(self) -> None:
         with open("system/xd.txt", 'r+') as r:
             if r.read() == '0':
-                result = win32api.MessageBox(None,
+                win32api.MessageBox(None,
                                              """Hello! Looks like it's your first start of ValChecker.
 Although you can find the FAQ and the full guide in my discord, I will specify some things here.
 
 
-What is a Riot Limit? When you send a lot of auth requests from one IP, riot blocks you for some time.
+What is a Rate Limit? When you send a lot of auth requests from one IP, riot blocks you for some time.
 So that's why you should use proxies for checking. If riot bans your IP, you will not be able to login in their launcher or site for ~30 minutes.
 
-Where can I find proxies? Any website you trust, just search for that in the internet. Or you can ask other people on my discord server.
+Where can I find proxies? Any website you trust, just search for that in the internet. Or you can buy a cheap UHQ proxy method on my discord server.
 
 Where can I find combos? Actually, the answer is the same as with proxies. The internet. But if you want to do combos yourself, you can buy a cheap and effective method on my discord server.
 

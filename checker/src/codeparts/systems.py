@@ -27,27 +27,53 @@ class system():
         self.parentpath = os.path.abspath(os.path.join(path, os.pardir))
 
     @staticmethod
-    def get_region(token: str, entt: str, proxy: dict):
+    def get_region(account) -> None:
         session = requests.Session()
         try:
             headers = {
-                'X-Riot-Entitlements-JWT': entt,
-                'Authorization': 'Bearer {}'.format(token)
+                'User-Agent': f'RiotClient/{Constants.RIOTCLIENT} %s (Windows;10;;Professional, x64)'
             }
             response = session.put(
-                Constants.REGION_URL, headers=headers, proxies=proxy)
+                Constants.REGION_URL, headers=headers, data={"id_token": account.tokenid})
 
-            response = response.json()
-            reg = 'N/A'
-            lvl = ''
-            #input(response)
-
-            return reg, lvl
+            data = response.json()
+            account.region = data['affinities']['live'].lower()
         except Exception as e:
-            return 'N/A', 'N/A'
+            account.region = None
 
     @staticmethod
-    def get_region2(account, proxy: dict={'http':None,'https':None}) -> None:
+    def get_country_and_level_only(account) -> None:
+        session = requests.Session()
+        headers = {"User-Agent": f"RiotClient/{Constants.RIOTCLIENT} %s (Windows;10;;Professional, x64)",
+                   "Pragma": "no-cache",
+                   "Accept": "*/*",
+                   "Content-Type": "application/json",
+                   "Authorization": f"Bearer {account.token}"}
+        userinfo = session.post(
+            Constants.USERINFO_URL, headers=headers)
+        userinfo = userinfo.json()
+        country = userinfo['country'].upper()
+        if account.region in ['latam', 'br']:
+            progregion = 'na'
+
+        # lvl
+        try:
+            headers = {
+                'X-Riot-Entitlements-JWT': account.entt,
+                'Authorization': 'Bearer {}'.format(account.token)
+            }
+            response = session.get(f"https://pd.{progregion}.a.pvp.net/account-xp/v1/players/{account.puuid}", headers=headers)
+            #input(response)
+            lvl = response.json()['Progress']['Level']
+            #input(lvl)
+        except Exception as e:
+            lvl = -1
+
+        account.country = country
+        account.lvl = lvl
+
+    @staticmethod
+    def get_region2(account) -> None:
         # reg + country
         session = requests.Session()
         headers = {"User-Agent": f"RiotClient/{Constants.RIOTCLIENT} %s (Windows;10;;Professional, x64)",
@@ -70,12 +96,13 @@ class system():
                 fixedregion = Constants.COU2REG[cou3]
             fixedregion = fixedregion.lower()
             progregion = fixedregion
-            if fixedregion == 'latam' or fixedregion == 'br':
+            if progregion in ['latam', 'br']:
                 progregion = 'na'
+            #input(progregion)
         except Exception as e:
             # input(e)
             fixedregion = 'N/A'
-
+            country = 'N/A'
         # lvl
         try:
             headers = {
@@ -83,9 +110,10 @@ class system():
                 'Authorization': 'Bearer {}'.format(account.token)
             }
             response = session.get(f"https://pd.{progregion}.a.pvp.net/account-xp/v1/players/{account.puuid}", headers=headers)
+            #input(response)
             lvl = response.json()['Progress']['Level']
-            #input(lvl)
         except Exception as e:
+            #input(e)
             lvl = 'N/A'
 
         account.region = fixedregion
@@ -100,7 +128,7 @@ class system():
             f.close()
             return data
         except:
-            print("can't find settings.json\nplease download it from my github\n")
+            print("can't find settings.json\nplease reinstall the ValChecker\n")
             return False
 
     @staticmethod
@@ -113,14 +141,12 @@ class system():
             rlimit_wait = data['rlimit_wait']
             cooldown = data['cooldown']
             create_folder = data['new_folder']
-            proxyscraper = data['proxyscraper']
             menu_choices = [
                 Separator(),
                 f'RLimits to skip an acc: {max_rlimits}',
                 f'Wait if there is a RLimit (seconds): {rlimit_wait}',
                 f'Wait between checking accounts (seconds): {cooldown}',
                 f'Create folder for every check: {create_folder}',
-                f'Proxy Scraper URL: {proxyscraper}',
                 Separator(),
                 'Exit'
             ]
@@ -130,17 +156,7 @@ class system():
                 default=menu_choices[0],
                 pointer='>'
             ).execute()
-            if edit == menu_choices[0]:
-                root = tkinter.Tk()
-                file = filedialog.askopenfile(parent=root, mode='rb', title='select file with accounts (login:password)',
-                                              filetype=(("txt", "*.txt"), ("All files", "*.txt")))
-                root.destroy()
-                if file == None:
-                    filename = 'None'
-                else:
-                    filename = str(file).split("name='")[1].split("'>")[0]
-                data['default_file'] = filename
-            elif edit == menu_choices[1]:
+            if edit == menu_choices[1]:
                 new_rlimits = input(
                     'enter the number of riot limits to skip this account (min 1) >>>')
                 if int(new_rlimits) < 1 or int(new_rlimits) > 999:
@@ -179,15 +195,6 @@ class system():
                     pointer='>'
                 ).execute().replace('Yes', 'True').replace('No', 'False')
                 data['new_folder'] = newfolder
-            elif edit == menu_choices[5]:
-                default_scraperurl = 'https://api.proxyscrape.com/?request=getproxies&proxytype=http&timeout=10000&country=all&ssl=all&anonymity=all'
-                newscraperurl = ''
-                newscraperurl = input(
-                    'Enter URL From Which (HTTP) Proxies Will Be Scraped, Leave Empty To Use ProxySrape: ')
-
-                if len(newscraperurl) == 0:
-                    newscraperurl = default_scraperurl
-                data['proxyscraper'] = newscraperurl
             else:
                 return
             f.seek(0)
@@ -310,6 +317,7 @@ class Account:
     logpass: str = None
     code: int = None
     token: str = None
+    tokenid: str = None
     entt: str = None
     puuid: str = None
     unverifiedmail: bool = None
@@ -371,7 +379,11 @@ class vlchkrsource:
             '20-35': 0,
             '35-40': 0,
             '40-70': 0,
-            '70+': 0
+            '70-100': 0,
+            '100-130': 0,
+            '130-165': 0,
+            '165-200': 0,
+            '200+': 0
         }
     
     def loadfile(self):
