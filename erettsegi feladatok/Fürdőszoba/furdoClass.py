@@ -10,5 +10,5 @@ class Furdo:
         
     def ido(self):
         return ":".join([str(self.ora),str(self.perc),str(self.masodperc)])
-    def idoMp(self):
+    def idoMp():
         return self.ora*60*60+self.perc*60+self.masodperc
